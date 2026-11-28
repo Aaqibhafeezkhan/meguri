@@ -79,6 +79,13 @@ export default tseslint.config(
       },
     },
   },
+  // Named functions are `function` declarations; arrow functions stay allowed
+  // for callbacks, handlers and typed consts such as IpcHandler<...>.
+  {
+    rules: {
+      "func-style": ["error", "declaration", { allowArrowFunctions: true }],
+    },
+  },
 
   // Renderer (React, browser environment)
   {
